@@ -1,6 +1,6 @@
 # 代码结构
 **dataloaders文件夹**：视频数据集解析及读取    
-**network**：C3D模型，包括未压缩的C3D模型、分块循环矩阵+全频域+INT8量化感知训练的C3D模型    
+**network文件夹**：C3D模型，包括未压缩的C3D模型、分块循环矩阵+全频域+INT8量化感知训练的C3D模型    
 **mypath.py**：数据集路径，修改output_dir为视频数据集的路径  
 **inference.py**：推理测试(未测试)  
 **utils.py**：学习率调整函数  
@@ -10,7 +10,7 @@
 --nEpochs指定训练时的迭代轮数  
 --lr指定学习率  
 --batch_size指定批处理大小  
---dataset指定数据集，目前仅支持ucf101和hmdb51两个数据集
+--dataset指定数据集，目前仅支持ucf101和hmdb51两个数据集   
 --num_workers指定线程数  
 --weight_decay指定权重衰减系数  
 --model_type指定模型类型，norm表示未压缩的C3D模型,qspectralcir表示循环矩阵+全频域+INT8量化感知训练优化后的C3D模型  
@@ -38,7 +38,7 @@ batch_size=64,
 dataset=ucf101,
 weight_decay=1e-4,
 model_type=qspectralcir(循环矩阵+全频域+INT8量化感知训练优化后的C3D模型),
-block_size=8  
+block_size=8。    
 ## 精度:
 94.257%  
 ## 结论
